@@ -6,5 +6,14 @@
 {% block body %}
     <div class="container">
         <h1 class="my-5">On s'amuse avec Twig !</h1>
+
+        <p>Et si on créait un filtre
+            {{ 'badge' | badge({'pill': true}) }}
+            et on peut aussi
+            {{ 'personnaliser !' | badge({'color': 'danger' }) }}</p>
+        <p>Lior est-il beau ?
+            {{ true | badge_bool }}</p>
+        <p>Statut de la facture :
+            {{ false | badge_bool({'true-label': 'Payée', 'false-label': 'En attente'}) }}</p>
     </div>
 {% endblock %}
