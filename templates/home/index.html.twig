@@ -15,5 +15,14 @@
             {{ true | badge_bool }}</p>
         <p>Statut de la facture :
             {{ false | badge_bool({'true-label': 'Payée', 'false-label': 'En attente'}) }}</p>
+
+        <h2>Et un tableau ?</h2>
+        {{ table(tableau, {'classes': 'table-hover'})}}
+
+        <h2>Et le même tableau mais un peu plus controlé ?</h2>
+        {{ table_start() }}
+        {{ table_header(['Prénom', 'Nom de famille', 'Age']) }}
+        {{ table_body(tableau) }}
+        {{ table_end() }}
     </div>
 {% endblock %}
